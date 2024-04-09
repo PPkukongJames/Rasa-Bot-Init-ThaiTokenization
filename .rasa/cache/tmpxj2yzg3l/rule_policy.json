@@ -1,0 +1,31 @@
+{
+  "lookup": {
+    "rules": {
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"food_order\"}}]": "form_food",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"food_order\"}}, {\"active_loop\": {\"name\": \"form_food\"}, \"prev_action\": {\"action_name\": \"form_food\"}, \"user\": {\"intent\": \"food_order\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"Say_hi\"}}]": "utter_ทักทาย",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"Say_hi\"}}, {\"prev_action\": {\"action_name\": \"utter_\\u0e17\\u0e31\\u0e01\\u0e17\\u0e32\\u0e22\"}, \"user\": {\"intent\": \"Say_hi\"}}]": "action_listen",
+      "[{\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"form_food\"}}]": "utter_submit",
+      "[{\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"form_food\"}}, {\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"utter_submit\"}}]": "action_listen"
+    },
+    "rule_only_slots": [],
+    "rule_only_loops": [
+      "form_food"
+    ],
+    "rules_for_loop_unhappy_path": {
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}}, {\"active_loop\": {\"name\": \"form_food\"}, \"prev_action\": {\"action_name\": \"form_food\"}, \"user\": {\"intent\": \"food_order\"}}]": "do_not_predict_loop_action"
+    },
+    "rules_not_in_stories": [
+      "handling active loops and forms - form_food",
+      "predicting default action with intent session_start",
+      "handling active loops and forms - form_food - action_listen",
+      "predicting default action with intent back",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"food_order\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"Say_hi\"}}, {\"prev_action\": {\"action_name\": \"utter_\\u0e17\\u0e31\\u0e01\\u0e17\\u0e32\\u0e22\"}, \"user\": {\"intent\": \"Say_hi\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"Say_hi\"}}]",
+      "[{\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"form_food\"}}, {\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"utter_submit\"}}]",
+      "[{\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"form_food\"}}]",
+      "predicting default action with intent restart"
+    ]
+  }
+}

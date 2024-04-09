@@ -1,0 +1,40 @@
+version: "3.1"
+
+intents:
+  - Say_hi
+  - food_order
+  - ยืนยันออเดอร์
+
+entities:
+  - food
+
+
+slots:
+  food:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: food
+
+forms:
+  form_food:
+    required_slots:
+        - food
+
+responses:
+  utter_ทักทาย:
+    - text: "สวัสดีครับ! มีอะไรให้ช่วยเหลือไหมครับ?"
+  utter_ask_food:
+    - text: "คุณต้องการสั่งอาหารอะไรครับ?"
+  utter_submit:
+    - text: "คุณได้สั่ง {food} เรียบร้อยแล้วครับ ขอบคุณครับ!"
+actions:
+  - form_food
+  - utter_ask_food
+  - utter_submit
+
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

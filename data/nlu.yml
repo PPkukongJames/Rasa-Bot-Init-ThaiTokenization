@@ -1,0 +1,37 @@
+version: "3.1"
+
+nlu:
+- intent: Say_hi
+  examples: |
+    - สวัสดี
+    - สวัสดีครับ
+    - หวัดดีจ้า
+    - สบายดีไหมคะ
+    - กำลังทำอะไรอยู่
+
+- intent: food_order
+  examples: |
+    - ฉันอยากจะสั่ง[ข้าวมันไก่](food)
+    - สั่ง[พิซซ่า](food)หนึ่งถาด
+    - ขอ[ผัดไทย](food)หนึ่งจาน
+    - ฉันต้องการ[เนื้อย่าง](food)สักหน่อย
+
+- lookup: food
+  examples: |
+    - pizza
+    - padthai
+    - grill_meet
+
+- synonym: pizza
+  examples: |
+    - พิซซ่า
+
+- synonym: padthai
+  examples: |
+    - ผัดไท
+    - ก๋วยเตี๋ยวผัดไทย
+
+- synonym: grill_meet
+  examples: |
+    - สเต็กเนื้อ
+    - เนื้อปิ้ง

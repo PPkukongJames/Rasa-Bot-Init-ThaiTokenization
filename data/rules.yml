@@ -1,0 +1,22 @@
+version: "3.1"
+
+rules:
+
+- rule: Say Hi
+  steps:
+  - intent: Say_hi
+  - action: utter_ทักทาย
+
+- rule: activate form food
+  steps:
+  - intent: food_order
+  - action: form_food
+  - active_loop: form_food
+
+- rule: ส่งมอบ form สั่งอาหาร
+  condition:
+  - active_loop: form_food
+  steps:
+  - action: form_food
+  - active_loop: null
+  - action: utter_submit
